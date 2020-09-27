@@ -4,8 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Podcast Shuffle</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'index.css' %}">
 </head>
 <body>
-    <h1>placeholder</h1>
+    <div id="wrapper">
+        <div id="header">
+            <h1 id="head1">Podcast Shuffle</h1>
+            <div id="head2">
+                <p>
+                    <button type="submit" class="open-button" onclick="openSignUpForm()">Sign Up</button>
+                    <button type="submit" class="open-button" onclick="openLoginForm()">Login</button>
+                </p>
+            </div>
+
+            <div class="form-popup" id="signup">
+                <form action="/register" class="form-container" method="POST">
+                    {% csrf_token %}
+                    <h1>Sign Up</h1>
+
+                    <label for="first_name"><b>First Name</b></label>
+                    <input type="text" placeholder="Enter First Name" name="first_name" required>
+
+                    <label for="last_name"><b>Last Name</b></label>
+                    <input type="text" placeholder="Enter Last Name" name="last_name" required>
+
+                    <label for="email"><b>Email</b></label>
+                    <input type="text" placeholder="Enter Email" name="email" required>
+
+                    <label for="password"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="password" required>
+
+                    <label for="confirm_password"><b>Password</b></label>
+                    <input type="password" placeholder="Confirm Password" name="confirm_password" required>
+
+                    <button type="submit" class="btn">Sign Up</button>
+                    <button type="submit" class="btn cancel" onclick="closeSignUpForm()">Close</button>
+                </form>
+              </div>
+
+              <div class="form-popup" id="login">
+                <form action="/login" class="form-container" method="POST">
+                    {% csrf_token %}
+                    <h1>Login</h1>
+
+                    <label for="email"><b>Email</b></label>
+                    <input type="text" placeholder="Enter Email" name="email" required>
+
+                    <label for="password"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="password" required>
+
+                    <button type="submit" class="btn">Login</button>
+                    <button type="submit" class="btn cancel" onclick="closeLoginForm()">Close</button>
+                </form>
+              </div>
+
+        </div>
+
+        <div id="body">
+            {% load static %}
+            <img id="image" src="{% static 'indeximg.jpg' %}" alt="My image">
+        </div>
+        <footer>
+            <div id="foot">
+                Powered by Spotify and iTunes
+            </div>
+        </footer>
+    </div>
+    <script>
+        function openSignUpForm() {
+        document.getElementById("signup").style.display = "block";
+        }
+
+        function closeSignUpForm() {
+        document.getElementById("signup").style.display = "none";
+        }
+
+        function openLoginForm() {
+        document.getElementById("login").style.display = "block";
+        }
+
+        function closeLoginForm() {
+        document.getElementById("login").style.display = "none";
+        }
+    </script>
 </body>
 </html>
