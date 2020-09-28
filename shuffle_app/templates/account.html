@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcast Shuffle</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <h1 id="head1">Podcast Shuffle</h1>
+            <div id="head2">
+                <a class="open-button" href="/home">Home</a>
+                <a class="open-button" href="/logout">Logout</a>
+            </div>
+        </div>
+        <div id="update_form">
+            <h2>Account Information:</h2>
+            {% csrf_token %}
+            <form action="/update/{{one_user.id}}" method="POST">
+                {% csrf_token %}
+                <div class="account_form">
+                    <label width="">First Name:</label>
+                    <input type="text" name="first_name" placeholder="{{one_user.first_name}}">
+                </div>
+                <div class="account_form">
+                    <label>Last Name:</label>
+                    <input type="text" name="last_name" placeholder="{{one_user.last_name}}">
+                </div>
+                <div class="account_form">
+                    <label for="email">Email:</label>
+                    <input type="text" name="email" placeholder="{{one_user.email}}">
+                </div>
+                <div class="account_form">
+                    <label for="password">Password:</label>
+                    <input type="text" name="password">
+                </div>
+                <div class="account_form">
+                    <label for="confirm_password">Confirm Password:</label>
+                    <input type="text" name="confirm_password">
+                </div>
+                <div>
+                    <input type="submit" value="Update" class="open-button">
+                    <a href="/" value="Cancel"  class="open-button">Cancel</a>
+                </div>
+                    
+
+            </form>
+            
+           
+    </div>
+</body>
+</html>

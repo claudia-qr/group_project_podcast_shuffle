@@ -40,6 +40,10 @@ def login(request):
                 return redirect('/home')
     return redirect('/')
 
+def logout(request):
+    request.session.flush()
+    return redirect('/')
+
 def home(request):
     if 'user_id' in request.session:
         logged_user = User.objects.filter(id=request.session['user_id'])
@@ -49,6 +53,11 @@ def home(request):
                 return render(request, 'home.html')
     return redirect('/')
 
-def logout(request):
-    request.session.flush()
-    return redirect('/')
+def account(request, id):
+    context = {
+        'one_user': User.objects.get(id=id)
+    }
+    return render(request, 'account.html', context)
+
+def library(request):
+    return render(request, 'library.html')
