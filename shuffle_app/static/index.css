@@ -91,8 +91,10 @@ footer{
     padding: 6px 10px;
     opacity: 0.8;
     width: 100px;
-    margin-bottom: 5px;
     font-family: "Courier New";
+}
+.split{
+    margin-bottom: 10px;
 }
 
 /* The popup form - hidden by default */
@@ -167,6 +169,7 @@ p{
 #update_form{
     vertical-align: center;
     margin: 55px;
+    padding: 5px 30px 20px;
     background-color: rgba(34, 233, 114, 0.269);
 }
 .account_form{
@@ -181,6 +184,20 @@ p{
 }
 #update_form input[type=text]:focus {
     background-color: lightblue
+}
+.input1{
+    float: right;
+    margin-right: 330px;
+}
+.input2{
+    float: right;
+    margin-right: 280px;
+}
+.split1{
+    margin-bottom: 10px;
+}
+.split2{
+    margin-bottom: 40px;
 }
 
 /* home page & library */
