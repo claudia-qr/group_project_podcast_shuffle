@@ -185,6 +185,17 @@ p{
 #update_form input[type=text]:focus {
     background-color: lightblue
 }
+.input1{
+    float: right;
+    margin-right: 330px;
+}
+.input2{
+    float: right;
+    margin-right: 280px;
+}
+.split{
+    margin-bottom: 40px;
+}
 
 /* home page & library */
 

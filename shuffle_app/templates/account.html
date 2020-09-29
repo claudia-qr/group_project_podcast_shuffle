@@ -23,34 +23,34 @@
                 {% csrf_token %}
                 <div class="account_form">
                     <label width="">First Name:</label>
-                    <input type="text" name="first_name" value="{{one_user.first_name}}">
+                    <input type="text" name="first_name" value="{{one_user.first_name}}" class="input1">
                 </div>
                 <div class="account_form">
                     <label>Last Name:</label>
-                    <input type="text" name="last_name" value="{{one_user.last_name}}">
+                    <input type="text" name="last_name" value="{{one_user.last_name}}" class="input1">
                 </div>
                 <div class="account_form">
                     <label for="email">Email:</label>
-                    <input type="text" name="email" value="{{one_user.email}}">
+                    <input type="text" name="email" value="{{one_user.email}}" class="input1">
                 </div>
-                <div>
-                    <input type="submit" value="Update" class="open-button">
-                    <a href="/" value="Cancel"  class="open-button">Cancel</a>
+                <div class="split">
+                    <input type="submit" value="Update" class="open-button" class="input1">
+                    <a href="/" value="Cancel"  class="open-button" class="input1">Cancel</a>
                 </div>
             <!-- edit pw -->
             <form action="/editpw" method="POST">
                 {% csrf_token %}
                 <div class="account_form">
                     <label for="password">New Password:</label>
-                    <input type="text" name="password">
+                    <input type="text" name="password" class="input2">
                 </div>
                 <div class="account_form">
                     <label for="confirm_password">Confirm Password:</label>
-                    <input type="text" name="confirm_password">
+                    <input type="text" name="confirm_password" class="input2">
                 </div>
                 <div>
-                    <input type="submit" value="Update" class="open-button">
-                    <a href="/" value="Cancel"  class="open-button">Cancel</a>
+                    <input type="submit" value="Update" class="open-button" class="input2">
+                    <a href="/" value="Cancel"  class="open-button" class="input2">Cancel</a>
                 </div>
 
             </form>
