@@ -19,22 +19,22 @@
         <div id="update_form">
             <h2>Account Information:</h2>
             {% csrf_token %}
-            <form action="/update/{{one_user.id}}" method="POST">
+            <form action="/editaccount" method="POST">
                 {% csrf_token %}
                 <div class="account_form">
                     <label width="">First Name:</label>
-                    <input type="text" name="first_name" placeholder="{{one_user.first_name}}">
+                    <input type="text" name="first_name" value="{{one_user.first_name}}">
                 </div>
                 <div class="account_form">
                     <label>Last Name:</label>
-                    <input type="text" name="last_name" placeholder="{{one_user.last_name}}">
+                    <input type="text" name="last_name" value="{{one_user.last_name}}">
                 </div>
                 <div class="account_form">
                     <label for="email">Email:</label>
-                    <input type="text" name="email" placeholder="{{one_user.email}}">
+                    <input type="text" name="email" value="{{one_user.email}}">
                 </div>
                 <div class="account_form">
-                    <label for="password">Password:</label>
+                    <label for="password">New Password:</label>
                     <input type="text" name="password">
                 </div>
                 <div class="account_form">
