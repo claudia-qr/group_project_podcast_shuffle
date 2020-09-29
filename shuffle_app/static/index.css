@@ -193,7 +193,10 @@ p{
     float: right;
     margin-right: 280px;
 }
-.split{
+.split1{
+    margin-bottom: 10px;
+}
+.split2{
     margin-bottom: 40px;
 }
 
