@@ -61,18 +61,34 @@ def editaccount(request):
     if 'user_id' in request.session:
         if request.method == 'POST':
             myaccount = User.objects.get(id=request.session['user_id'])
-            errors = User.objects.user_validator(request.POST)
-            if len(errors) > 0:
-                for key, values in errors.items():
-                    messages.error(request, values)
-                return redirect(f'/account/{str(myaccount.id)}')
-            myaccount = User.objects.get(id=request.session['user_id'])
+            # errors = User.objects.user_validator(request.POST)
+            # if len(errors) > 0:
+            #     for key, values in errors.items():
+            #         messages.error(request, values)
+            #     return redirect(f'/account/{str(myaccount.id)}')
             myaccount.first_name = request.POST['first_name']
             myaccount.last_name = request.POST['last_name']
             myaccount.email = request.POST['email']
+            myaccount.save()
+            request.session['name'] = myaccount.first_name + ' ' + myaccount.last_name
+            request.session['user_id'] = myaccount.id
+            return redirect(f'/account/{str(myaccount.id)}')
+    return redirect('/')
+
+def editpw(request):
+    if 'user_id' in request.session:
+        if request.method == 'POST':
+            myaccount = User.objects.get(id=request.session['user_id'])
+            # errors = User.objects.user_validator(request.POST)
+            # if len(errors) > 0:
+            #     for key, values in errors.items():
+            #         messages.error(request, values)
+            #     return redirect(f'/account/{str(myaccount.id)}')
             pw_hash = bcrypt.hashpw(request.POST['password'].encode(), bcrypt.gensalt()).decode()
             myaccount.password = pw_hash
             myaccount.save()
+            request.session['name'] = myaccount.first_name + ' ' + myaccount.last_name
+            request.session['user_id'] = myaccount.id
             return redirect(f'/account/{str(myaccount.id)}')
     return redirect('/')
 

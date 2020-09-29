@@ -18,7 +18,7 @@
         </div>
         <div id="update_form">
             <h2>Account Information:</h2>
-            {% csrf_token %}
+            <!-- edit account -->
             <form action="/editaccount" method="POST">
                 {% csrf_token %}
                 <div class="account_form">
@@ -33,6 +33,13 @@
                     <label for="email">Email:</label>
                     <input type="text" name="email" value="{{one_user.email}}">
                 </div>
+                <div>
+                    <input type="submit" value="Update" class="open-button">
+                    <a href="/" value="Cancel"  class="open-button">Cancel</a>
+                </div>
+            <!-- edit pw -->
+            <form action="/editpw" method="POST">
+                {% csrf_token %}
                 <div class="account_form">
                     <label for="password">New Password:</label>
                     <input type="text" name="password">
@@ -45,11 +52,10 @@
                     <input type="submit" value="Update" class="open-button">
                     <a href="/" value="Cancel"  class="open-button">Cancel</a>
                 </div>
-                    
 
             </form>
-            
-           
+
+
     </div>
 </body>
 </html>
