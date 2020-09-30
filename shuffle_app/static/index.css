@@ -3,7 +3,8 @@
     border-style: dotted;
 } */
 body{
-    background-color: #151414;
+    background-color: #080908e2;
+    background-image: url('shuffle.png');
 }
 #wrapper{
     width: 920px;
@@ -28,7 +29,7 @@ body{
 }
 #head1{
     float: left;
-    color: #878183;
+    color: rgba(19, 30, 43, 0.708);
     font-family: "Courier New";
     font-size: 55px;
     line-height: 120px;
@@ -170,7 +171,7 @@ p{
     vertical-align: center;
     margin: 55px;
     padding: 5px 30px 20px;
-    background-color: rgba(34, 233, 114, 0.269);
+    background-color: rgba(10, 11, 10, 0.269);
 }
 .account_form{
     margin: 5px;
@@ -183,7 +184,7 @@ p{
     width: 300px;
 }
 #update_form input[type=text]:focus {
-    background-color: lightblue
+    background-color: rgba(19, 30, 43, 0.708)
 }
 .input1{
     float: right;
@@ -205,7 +206,7 @@ p{
 #title{
     height: auto;
     width: 800px;
-    background-color: rgba(45, 18, 45, 0.831);
+    background-color: rgba(19, 30, 43, 0.708);
     padding: 15px;
     margin: 15px;
     float: left;
@@ -218,7 +219,7 @@ p{
 #main_content{
     min-height: auto;
     width: 860px;
-    background-color: rgba(178, 189, 193, 0.434);
+    background-color: rgb(3, 21, 24);
     padding: 15px;
     display: inline-block;
     margin: 15px;
@@ -234,7 +235,7 @@ p{
 .subcontents{
     min-height: 280px;
     width: 253px;
-    background-color: rgb(3, 21, 24);
+    background-color: rgb(229, 239, 240);
     display: inline-block;
     margin: 15px;
 }
