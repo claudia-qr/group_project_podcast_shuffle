@@ -2,9 +2,10 @@ from django.shortcuts import render, redirect, HttpResponse
 from .models import *
 from django.contrib import messages
 import bcrypt
+import spotipy
+from spotipy.oauth2 import SpotifyClientCredentials
 
 # Create your views here.
-
 def index(request):
     if 'user_id' in request.session:
         return redirect('/home')
