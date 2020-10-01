@@ -233,9 +233,10 @@ p{
     margin: 15px;
 }
 .subcontents{
-    min-height: 280px;
+    height: 230px;
     width: 253px;
     background-color: rgb(229, 239, 240);
     display: inline-block;
     margin: 15px;
+    border-radius: 10px;
 }
