@@ -29,7 +29,7 @@ body{
 }
 #head1{
     float: left;
-    color: rgba(19, 30, 43, 0.708);
+    color: #d54e7b;
     font-family: "Courier New";
     font-size: 55px;
     line-height: 120px;
@@ -87,7 +87,7 @@ footer{
 
 /* Button used to open the contact form - fixed at the bottom of the page */
 .open-button {
-    background-color: #5a5c60;
+    background-color: #dd7498;
     color: white;
     padding: 6px 10px;
     opacity: 0.8;
